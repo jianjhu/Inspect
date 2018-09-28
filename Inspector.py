@@ -110,11 +110,12 @@ if __name__ == '__main__':
     model.compile(loss=keras.losses.categorical_crossentropy,
                   optimizer=keras.optimizers.Adadelta(),
                   metrics=['accuracy'])
-
+    tb_cb = keras.callbacks.TensorBoard(log_dir='keras_log', write_images=1, histogram_freq=1)
     model.fit(x_train, y_train,
               batch_size=batch_size,
               epochs=epochs,
               verbose=1,
+              callbacks=[tb_cb],
               validation_data=(x_test, y_test))
 
     x_ev = x_test

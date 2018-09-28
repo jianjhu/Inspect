@@ -1,4 +1,4 @@
-"No."  ,"Time"           ,"Source"        ,"Destination"   ,"Protocol","Length","Info"
+"No.","Time","Source","Destination","Protocol","Length","Info"
 "67"   ,"02:18:17.963374","10.140.212.198","10.224.168.94" ,"TCP"     ,"409"   ,"52372  >  3478 [PSH, ACK] Seq=1 Ack=1 Win=65535 Len=355 [TCP segment of a reassembled PDU]"
 "68"   ,"02:18:17.964997","10.224.168.94" ,"10.140.212.198","TCP"     ,"409"   ,"3478  >  52370 [PSH, ACK] Seq=1 Ack=1 Win=29200 Len=355 [TCP segment of a reassembled PDU]"
 "69"   ,"02:18:17.965044","10.140.212.198","10.224.168.94" ,"TCP"     ,"54"    ,"52370  >  3478 [ACK] Seq=1 Ack=356 Win=65535 Len=0"

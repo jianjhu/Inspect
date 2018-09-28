@@ -99,6 +99,7 @@ def get_dataset3(file, source, interval=1, draw=False):
 
 def draw_dataset3(dataset, num=10):
     import matplotlib.pyplot as plt
+    from mpl_toolkits.mplot3d import Axes3D
     fig = plt.figure()
     ax = fig.add_subplot(121, projection='3d')
     ay = fig.add_subplot(122, projection='3d')

@@ -54,11 +54,12 @@ def train_model(x, y):
     model.compile(loss=keras.losses.categorical_crossentropy,
                   optimizer=keras.optimizers.Adadelta(),
                   metrics=['accuracy'])
-
+    tb_cb = keras.callbacks.TensorBoard(log_dir='keras_log', write_images=1, histogram_freq=1)
     model.fit(x_train, y_train,
               batch_size=batch_size,
               epochs=epochs,
               verbose=1,
+              callbacks=[tb_cb],
               validation_data=(x_test, y_test))
 
     x_ev = x_test
@@ -70,17 +71,17 @@ def train_model(x, y):
 
 
 if __name__ == '__main__':
-    pure_voice = get_dataset3('DataSet/pure_voice.csv', '192.168.31.219')
+    pure_voice = get_dataset3('DataSet/pure_voice.csv', '192.168.31.219',draw=True)
     print('pure voice ', len(pure_voice))
     # draw_dataset3(pure_voice[240])
-    mixed_voice = get_dataset3('DataSet/mixed_voice.csv', '192.168.31.219')
+    mixed_voice = get_dataset3('DataSet/mixed_voice.csv', '192.168.31.219',draw=True)
     print('mix voice ', len(mixed_voice))
 
     voice_data = pure_voice + mixed_voice
     voice_label = [VOICE_LABEL] * len(voice_data)
     print('voice ', len(voice_data))
 
-    no_voice_data = get_dataset3('DataSet/no_voice.csv', '192.168.31.219')
+    no_voice_data = get_dataset3('DataSet/no_voice.csv', '192.168.31.219',draw=True)
     no_voice_label = [NO_VOICE_LABEL] * len(no_voice_data)
     print('no voice ', len(no_voice_data))
 
